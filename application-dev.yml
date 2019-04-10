@@ -1,0 +1,13 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: common-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/beanzero/common-config/
+#          search-paths:
+#          username:
+#          password:
