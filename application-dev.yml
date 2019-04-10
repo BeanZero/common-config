@@ -2,7 +2,7 @@ server:
   port: 8001
 spring:
   application:
-    name: common-config-up1
+    name: common-config-up2
   cloud:
     config:
       server:
