@@ -1,0 +1,19 @@
+server:
+  port: ${ARGS_ZIPKIN_SERVER_PORT}
+
+spring:
+  boot:
+    admin:
+      client:
+        url: http://${ARGS_ADMIN_HOSTNAME}:${ARGS_ADMIN_PORT}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${ARGS_EUREKA1_HOSTNAME}:${ARGS_EUREKA1_PORT}/eureka/, http://${ARGS_EUREKA2_HOSTNAME}:${ARGS_EUREKA2_PORT}/eureka/, http://${ARGS_EUREKA3_HOSTNAME}:${ARGS_EUREKA3_PORT}/eureka/
+
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
