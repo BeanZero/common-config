@@ -1,0 +1,20 @@
+server:
+  port: ${ARGS_COMMON_REDIS_SERVER_PORT}
+
+spring:
+  zipkin:
+    base-url: http://${ARGS_ZIPKIN_HOSTNAME}:${ARGS_ZIPKIN_PORT}
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1.0
+  boot:
+    admin:
+      client:
+        url: http://${ARGS_ADMIN_HOSTNAME}:${ARGS_ADMIN_PORT}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${ARGS_EUREKA1_HOSTNAME}:${ARGS_EUREKA1_PORT}/eureka/, http://${ARGS_EUREKA2_HOSTNAME}:${ARGS_EUREKA2_PORT}/eureka/, http://${ARGS_EUREKA3_HOSTNAME}:${ARGS_EUREKA3_PORT}/eureka/
