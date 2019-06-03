@@ -16,14 +16,14 @@ spring:
   redis:
     lettuce:
       pool:
-        max-active: 50
-        max-idle: 20
-        min-idle: 10
-        max-wait: -1ms
+        max-active: 200
+        max-idle: 100
+        min-idle: 50
+        max-wait: 3000ms
     sentinel:
       master: mymaster
       nodes: ${ARGS_REDIS_NODES}
-    password: redis1234
+    password: ${ARGS_REDIS_PASSWORD}
 
 eureka:
   client:
